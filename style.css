@@ -1,0 +1,21 @@
+body {
+    font-family: sans-serif;
+    margin: 30px;
+}
+
+#results {
+    margin-top: 20px;
+}
+
+.message {
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+
+.author {
+    font-weight: bold;
+}
+
+.date {
+    color: gray;
+}
