@@ -7,19 +7,63 @@
 </head>
 <body>
 
+<div id="contextModal" class="modal">
+
+    <div class="modal-content">
+
+        <span id="closeModal">&times;</span>
+
+        <div id="contextContent"></div>
+
+    </div>
+
+</div>
+
+<div class="container">
+
 <h1>카카오톡 대화 검색기</h1>
 
-<input type="file" id="fileInput" accept=".txt">
+<div id="dropZone">
+    TXT 파일을 여기로 드래그하거나 클릭해서 선택
+</div>
+
+<div id="loading" style="display:none;">
+    처리중...
+</div>
+
+<input type="file" id="fileInput" accept=".txt" hidden>
 
 <br><br>
 
-<input type="text" id="searchInput" placeholder="검색어 입력">
+<div class="search-panel">
 
-<select id="authorFilter">
-    <option value="">전체 작성자</option>
-</select>
+    <input type="text"
+           id="searchInput"
+           placeholder="검색어 입력">
 
-<button id="searchBtn">검색</button>
+    <select id="authorFilter">
+        <option value="">전체 작성자</option>
+    </select>
+
+    <button id="searchBtn">검색</button>
+
+</div>
+
+<div class="date-panel">
+
+    <input type="date" id="startDate">
+    <input type="date" id="endDate">
+
+</div>
+
+<br><br>
+
+<input type="date" id="startDate">
+<input type="date" id="endDate">
+
+<div id="resultCount"></div>
+
+<div id="searchTime"></div>
 
 <hr>
 
@@ -27,7 +71,10 @@
 
 <div id="results"></div>
 
+</div>
+
 <script src="app.js"></script>
+
 
 </body>
 </html>
