@@ -1,21 +1,254 @@
 body {
-    font-family: sans-serif;
-    margin: 30px;
+    margin: 0;
+    background: #f5f7fb;
+    font-family:
+        "Pretendard",
+        "Noto Sans KR",
+        sans-serif;
+    color: #222;
 }
+
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+h1 {
+    margin-bottom: 25px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+/* 업로드 영역 */
+
+#dropZone {
+    background: white;
+    border: 2px dashed #d0d7de;
+    border-radius: 18px;
+    padding: 70px 30px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.2s ease;
+    margin-bottom: 20px;
+}
+
+#dropZone:hover {
+    border-color: #fee500;
+    transform: translateY(-2px);
+}
+
+#dropZone.dragover {
+    background: #fffce5;
+    border-color: #fee500;
+}
+
+/* 입력창 */
+
+input,
+select,
+button {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+input[type="text"] {
+    width: 400px;
+    max-width: 100%;
+}
+
+input[type="date"] {
+    width: 180px;
+}
+
+button {
+    background: #fee500;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    transition: all 0.15s ease;
+}
+
+button:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+/* 검색 정보 */
+
+#stats,
+#resultCount,
+#searchTime {
+    margin-top: 10px;
+    color: #555;
+    font-size: 14px;
+}
+
+/* 로딩 */
+
+#loading {
+    margin: 15px 0;
+    padding: 14px;
+    border-radius: 12px;
+    background: #fff8d6;
+    font-weight: bold;
+}
+
+/* 결과 */
 
 #results {
     margin-top: 20px;
 }
 
 .message {
-    border-bottom: 1px solid #ddd;
-    padding: 10px;
+    background: white;
+    border-radius: 16px;
+    padding: 18px;
+    margin-bottom: 12px;
+
+    box-shadow:
+        0 2px 10px rgba(0,0,0,0.05);
+
+    transition: all 0.15s ease;
+}
+
+.message:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 18px rgba(0,0,0,0.08);
 }
 
 .author {
-    font-weight: bold;
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 5px;
 }
 
 .date {
-    color: gray;
+    color: #888;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.contextBtn {
+    margin-top: 12px;
+}
+
+/* 하이라이트 */
+
+mark {
+    background: #fff0a6;
+    border-radius: 4px;
+    padding: 1px 3px;
+}
+
+/* 모달 */
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0,0,0,0.5);
+
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+
+    width: 90%;
+    max-width: 1100px;
+
+    height: 80%;
+
+    margin: 3% auto;
+
+    padding: 24px;
+
+    overflow-y: auto;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.2);
+}
+
+/* X 버튼 */
+
+#closeModal {
+    position: sticky;
+
+    top: 0;
+
+    float: right;
+
+    cursor: pointer;
+
+    font-size: 28px;
+
+    font-weight: bold;
+
+    background: white;
+
+    padding: 5px 12px;
+
+    border-radius: 8px;
+
+    z-index: 10;
+}
+
+#closeModal:hover {
+    background: #f3f3f3;
+}
+
+/* 전후 대화 */
+
+.context-message {
+    padding: 12px;
+    margin-bottom: 8px;
+
+    border-radius: 10px;
+
+    border: 1px solid #eee;
+}
+
+.context-current {
+    background: #fff7c2;
+    border: 1px solid #f1d96a;
+    font-weight: bold;
+}
+
+/* 모바일 */
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 15px;
+    }
+
+    input[type="text"] {
+        width: 100%;
+    }
+
+    input[type="date"] {
+        width: 100%;
+        margin-top: 8px;
+    }
+
+    button {
+        width: 100%;
+        margin-top: 8px;
+    }
+
+    .modal-content {
+        width: 96%;
+        height: 90%;
+        margin-top: 5%;
+    }
 }
